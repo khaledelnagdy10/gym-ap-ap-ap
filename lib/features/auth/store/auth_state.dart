@@ -9,9 +9,9 @@ class AuthLoading implements AuthState {}
 
 class AuthSuccess implements AuthState {}
 
-class UserType implements AuthState {
+class UserType implements AuthState {}
 
-}
+class GanderType implements AuthState {}
 
 class AuthFail implements AuthState {
   final String errorMessage;

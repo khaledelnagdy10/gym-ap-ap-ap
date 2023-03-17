@@ -4,15 +4,9 @@ import 'package:online_coaching/features/auth/store/auth_cubit.dart';
 import 'package:online_coaching/features/auth/store/auth_state.dart';
 import 'package:online_coaching/screens/welcome_screen.dart';
 
-class RegisterScreen extends StatefulWidget {
+class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
 
-  @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
-}
-
-class _RegisterScreenState extends State<RegisterScreen> {
-  String currentTypeSelected = 'user';
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(listener: (context, state) {
@@ -32,150 +26,140 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
       return Scaffold(
         backgroundColor: Colors.teal,
-        body: Stack(
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/online_coaching.png'),
-                  fit: BoxFit.fill,
+        body: Form(
+          key: cubit.keyForm,
+          child: Stack(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/Online coaching.png'),
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
-            ),
-            Center(
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 80.0),
-                    const Center(
-                      child: Text(
-                        'Register Now',
-                        style: TextStyle(
-                          fontSize: 40.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 56.0,
-                    ),
-                    Padding(
-                      padding: const EdgeInsetsDirectional.symmetric(
-                        horizontal: 40.0,
-                      ),
-                      child: SizedBox(
-                          width: 300.0,
-                          child: DropdownButton<String>(
-                            hint: Text(cubit.currentUserTypeSelected),
-                            borderRadius: BorderRadius.circular(20),
-                            style: const TextStyle(color: Colors.teal),
-                            items: ['coach', 'user']
-                                .map<DropdownMenuItem<String>>((value) {
-                              return DropdownMenuItem(
-                                value: value,
-                                child: Text(value),
-                              );
-                            }).toList(),
-                            onChanged: (value) {
-                              setState(() {
-                                cubit.onChangeValue(value!);
-                              });
-                            },
-                          )),
-                    ),
-                    const SizedBox(
-                      height: 56.0,
-                    ),
-                    Padding(
-                      padding: const EdgeInsetsDirectional.symmetric(
-                        horizontal: 40.0,
-                      ),
-                      child: SizedBox(
-                        width: 300.0,
-                        child: TextField(
-                          controller: cubit.name,
-                          style: const TextStyle(color: Colors.white),
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'User Name',
-                            prefixIconColor: Colors.white,
-                            labelStyle: TextStyle(
-                              color: Colors.white,
-                            ),
+              Center(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 80.0),
+                      const Center(
+                        child: Text(
+                          'Register Now',
+                          style: TextStyle(
+                            fontSize: 40.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 15.0,
-                    ),
-                    _buildCustomTextFormField(
-                        'height', Icons.height, cubit.height),
-                    const SizedBox(
-                      height: 15.0,
-                    ),
-                    _buildCustomTextFormField(
-                        'weight', Icons.line_weight, cubit.weight),
-                    const SizedBox(
-                      height: 15.0,
-                    ),
-                    _buildCustomTextFormField('age', Icons.person, cubit.age),
-                    const SizedBox(
-                      height: 15.0,
-                    ),
-                    _buildCustomTextFormField(
-                        'user Gander', Icons.abc, cubit.gender),
-                    const SizedBox(
-                      height: 15.0,
-                    ),
-                    _buildCustomTextFormField(
-                        'user level', Icons.numbers, cubit.level),
-                    const SizedBox(
-                      height: 15.0,
-                    ),
-                    _buildCustomTextFormField(
-                        'Email', Icons.email, cubit.password),
-                    const SizedBox(
-                      height: 15.0,
-                    ),
-                    _buildCustomTextFormField(
-                        'Password', Icons.lock, cubit.password),
-                    const SizedBox(
-                      height: 80.0,
-                    ),
-                    Padding(
-                      padding: const EdgeInsetsDirectional.symmetric(
-                          horizontal: 100.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20.0)),
-                        width: 200.0,
-                        child: MaterialButton(
-                          onPressed: cubit.registerUser,
-                          child: state is AuthLoading
-                              ? const SizedBox(
-                                  width: 25,
-                                  height: 25,
-                                  child: CircularProgressIndicator())
-                              : const Text(
-                                  'Sign Up',
-                                  style: TextStyle(color: Colors.black),
-                                ),
+                      const SizedBox(
+                        height: 56.0,
+                      ),
+                      _buildCustomDropdownButton(['coach', 'user'],
+                          cubit.selectedUserType, cubit.onChangeUserType),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField(
+                          'user name', Icons.person_2, cubit.name),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField(
+                          'height', Icons.height, cubit.height),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField(
+                          'weight', Icons.line_weight, cubit.weight),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField('age', Icons.person, cubit.age),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomDropdownButton(['male', 'famele'],
+                          cubit.gender, cubit.onChangeGender),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField(
+                          'user level', Icons.numbers, cubit.level),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField(
+                          'Email', Icons.email, cubit.password),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField(
+                          'Password', Icons.lock, cubit.password),
+                      const SizedBox(
+                        height: 80.0,
+                      ),
+                      Padding(
+                        padding: const EdgeInsetsDirectional.symmetric(
+                            horizontal: 100.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20.0)),
+                          width: 200.0,
+                          child: MaterialButton(
+                            onPressed: cubit.registerUser,
+                            child: state is AuthLoading
+                                ? const SizedBox(
+                                    width: 25,
+                                    height: 25,
+                                    child: CircularProgressIndicator())
+                                : const Text(
+                                    'Sign Up',
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
     });
+  }
+
+  Widget _buildCustomDropdownButton(List<String> listOfValue, hint, function) {
+    return Padding(
+      padding: const EdgeInsetsDirectional.symmetric(
+        horizontal: 40.0,
+      ),
+      child: SizedBox(
+          width: 300.0,
+          child: DropdownButton<String>(
+            hint: Text(
+              hint,
+              style: const TextStyle(color: Colors.white, fontSize: 18),
+            ),
+            borderRadius: BorderRadius.circular(20),
+            style: const TextStyle(color: Colors.teal),
+            items: listOfValue.map<DropdownMenuItem<String>>((value) {
+              return DropdownMenuItem(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+            onChanged: (value) {
+              function(value!);
+            },
+          )),
+    );
   }
 
   Widget _buildCustomTextFormField(label, icon, controller) {
@@ -190,7 +174,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           validator: (String? value) {
             if (value!.isEmpty) {
               return 'this field required';
-            } else if (label != 'password' && isEmail(value)) {
+            } else if (label == 'email' && isEmail(value)) {
               return 'please enter invalide email';
             } else if (label == 'password' && value.length < 8) {
               return 'password must be grater than 8 character';

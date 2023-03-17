@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/online_coaching.png'),
+                    image: AssetImage('assets/images/Online coaching.png'),
                     fit: BoxFit.fill,
                   ),
                 ),

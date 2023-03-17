@@ -13,35 +13,26 @@ class AuthCubit extends Cubit<AuthState> {
   final weight = TextEditingController();
   final age = TextEditingController();
   final level = TextEditingController();
-  final gender = TextEditingController();
+
   final GlobalKey<FormState> keyForm = GlobalKey();
 
-  String currentUserTypeSelected = 'user';
+  String selectedUserType = 'user';
+  String gender = 'male';
 
   AuthCubit({required this.authServices}) : super(AuthInitial());
 
-  void onChangeValue(value) {
-    currentUserTypeSelected = value;
-    emit(UserType());
+  void onChangeUserType(value) {
+    selectedUserType = value;
+    emit(GanderType());
+  }
+
+  void onChangeGender(value) {
+    gender = value;
+    emit(GanderType());
   }
 
   registerUser() async {
-    if (email.text.isEmpty || password.text.isEmpty || name.text.isEmpty) {
-      emit(AuthFail(errorMessage: "Please complete the fields."));
-      return;
-    }
-
-    if (name.text.length < 4) {
-      emit(AuthFail(
-          errorMessage: "Name length should be 4 characters or more."));
-      return;
-    }
-
-    if (password.text.length < 8) {
-      emit(AuthFail(
-          errorMessage: "Password length should be 8 characters or more."));
-      return;
-    }
+    if (!keyForm.currentState!.validate()) return;
 
     emit(AuthLoading());
     try {
@@ -51,10 +42,10 @@ class AuthCubit extends Cubit<AuthState> {
           name.text.trim(),
           double.parse(weight.text.trim()),
           double.parse(height.text.trim()),
-          gender.text.trim(),
+          gender,
           int.parse(age.text.trim()),
           level.text.trim(),
-          currentUserTypeSelected);
+          selectedUserType);
       emit(AuthSuccess());
     } on FirebaseException catch (e) {
       emit(AuthFail(errorMessage: e.message!));
@@ -62,9 +53,7 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   loginUser() async {
-    if (!keyForm.currentState!.validate()) {
-      return;
-    }
+    if (!keyForm.currentState!.validate()) return;
     emit(AuthLoading());
     try {
       await authServices.login(email.text.trim(), password.text.trim());
