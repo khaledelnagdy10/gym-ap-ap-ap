@@ -8,7 +8,7 @@ class CardioScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(children: [
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/20.png'),
               fit: BoxFit.fill,
@@ -18,25 +18,25 @@ class CardioScreen extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 50.0,),
+            const SizedBox(height: 50.0,),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 IconButton(onPressed: ()
                 {
                   Navigator.pop(context);
-                }, icon: Icon(Icons.arrow_back_outlined),
+                }, icon: const Icon(Icons.arrow_back_outlined),
                   color: Colors.white,
                   iconSize: 30.0,
                 ),
               ],
             ),
-            SizedBox(height: 150.0,),
+            const SizedBox(height: 150.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){},
-                child: Text('Jumping Jacks',
+                child: const Text('Jumping Jacks',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -45,8 +45,8 @@ class CardioScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -56,12 +56,12 @@ class CardioScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 50.0,),
+            const SizedBox(height: 50.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 120.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 120.0),
               child: TextButton(
                 onPressed: (){},
-                child: Text('Plank Jump_Inc',
+                child: const Text('Plank Jump_Inc',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -70,8 +70,8 @@ class CardioScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -81,12 +81,12 @@ class CardioScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 70.0,),
+            const SizedBox(height: 70.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){},
-                child: Text('High Knee',
+                child: const Text('High Knee',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -95,8 +95,8 @@ class CardioScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -106,12 +106,12 @@ class CardioScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 90.0,),
+            const SizedBox(height: 90.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){},
-                child: Text('Climbers',
+                child: const Text('Climbers',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -120,8 +120,8 @@ class CardioScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(

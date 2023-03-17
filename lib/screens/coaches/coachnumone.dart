@@ -36,9 +36,9 @@ class CoachNumOne extends StatelessWidget {
                     const SizedBox(width: 10.0,),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text('User Name',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.white),),
-                        const Text('Email Adress',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.white),),
+                      children: const [
+                        Text('User Name',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.white),),
+                        Text('Email Adress',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.white),),
                       ],
                     ),
                     const SizedBox(width: 5.0),

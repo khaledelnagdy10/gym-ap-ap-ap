@@ -14,7 +14,7 @@ class _EditScreenState extends State<EditScreen> {
      body: Stack(
       children: [
       Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
       image: DecorationImage(
       image: AssetImage('assets/images/Online coaching.png'),
       fit: BoxFit.fill,),
@@ -23,21 +23,21 @@ class _EditScreenState extends State<EditScreen> {
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 60.0,),
+          const SizedBox(height: 60.0,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 5.0),
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 5.0),
             child: Row(
               children:
               [
                 IconButton(onPressed: ()
                 {
                   Navigator.pop(context);
-                }, icon: Icon(Icons.arrow_back_ios_new),
+                }, icon: const Icon(Icons.arrow_back_ios_new),
                   iconSize: 50.0,
                   color: Colors.white,
                 ),
-                SizedBox(width: 25.0,),
-                Text('Edit Your Profile',
+                const SizedBox(width: 25.0,),
+                const Text('Edit Your Profile',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -47,13 +47,13 @@ class _EditScreenState extends State<EditScreen> {
               ],
             ),
           ),
-          SizedBox(height: 30.0,),
+          const SizedBox(height: 30.0,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
-            child: Container(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+            child: SizedBox(
               width: 300.0,
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.account_circle),
                     prefixIconColor: Colors.white,
                     labelText: 'User Name',
@@ -64,13 +64,13 @@ class _EditScreenState extends State<EditScreen> {
                 keyboardType: TextInputType.name,),
             ),
           ),
-          SizedBox(height: 30.0,),
+          const SizedBox(height: 30.0,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
-            child: Container(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+            child: SizedBox(
               width: 300.0,
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.email),
                     prefixIconColor: Colors.white,
                     labelText: 'Email Address',
@@ -81,13 +81,13 @@ class _EditScreenState extends State<EditScreen> {
                 keyboardType: TextInputType.emailAddress,),
             ),
           ),
-          SizedBox(height: 30.0,),
+          const SizedBox(height: 30.0,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
-            child: Container(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+            child: SizedBox(
               width: 300.0,
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     labelText: 'Weight',
                     labelStyle: TextStyle(
                       color: Colors.white,
@@ -96,13 +96,13 @@ class _EditScreenState extends State<EditScreen> {
                 keyboardType: TextInputType.number,),
             ),
           ),
-          SizedBox(height: 30.0,),
+          const SizedBox(height: 30.0,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
-            child: Container(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+            child: SizedBox(
               width: 300.0,
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     labelText: 'Height',
                     labelStyle: TextStyle(
                       color: Colors.white,
@@ -111,13 +111,13 @@ class _EditScreenState extends State<EditScreen> {
                 keyboardType: TextInputType.number,),
             ),
           ),
-          SizedBox(height: 30.0,),
+          const SizedBox(height: 30.0,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
-            child: Container(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+            child: SizedBox(
               width: 300.0,
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     labelText: 'Sex',
                     labelStyle: TextStyle(
                       color: Colors.white,
@@ -126,13 +126,13 @@ class _EditScreenState extends State<EditScreen> {
                 keyboardType: TextInputType.text,),
             ),
           ),
-          SizedBox(height: 30.0,),
+          const SizedBox(height: 30.0,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
-            child: Container(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+            child: SizedBox(
               width: 300.0,
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.calendar_month),
                     prefixIconColor: Colors.white,
                     labelText: 'Date Of Birth',
@@ -143,9 +143,9 @@ class _EditScreenState extends State<EditScreen> {
                 keyboardType: TextInputType.datetime,),
             ),
           ),
-          SizedBox(height: 40,),
+          const SizedBox(height: 40,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 100.0),
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 100.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -156,9 +156,9 @@ class _EditScreenState extends State<EditScreen> {
               child:
               MaterialButton(
                 onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>ProfileScreen()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const ProfileScreen()));
                 },
-                child: Text('Confirm',
+                child: const Text('Confirm',
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,

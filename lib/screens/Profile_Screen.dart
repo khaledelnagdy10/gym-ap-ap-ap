@@ -53,29 +53,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
               [
                 const SizedBox(height: 100,),
                 Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 35.0),
+                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 35.0),
                   child: Row(
                     children:
                     [
-                      CircleAvatar(
+                      const CircleAvatar(
                         radius: 30.0,
                         backgroundImage: AssetImage(
                             'assets/images/IMG_6395.JPG'),
                       ),
-                      SizedBox(width: 10.0,),
+                      const SizedBox(width: 10.0,),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('${userData.name}', style: TextStyle(fontSize: 30,
+                          Text('${userData.name}', style: const TextStyle(fontSize: 30,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),),
-                          Text('${userData.email}', style: TextStyle(fontSize: 30,
+                          Text('${userData.email}', style: const TextStyle(fontSize: 30,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),),
 
                         ],
                       ),
-                      SizedBox(width: 20),
+                      const SizedBox(width: 20),
                       IconButton(
                         onPressed: () {
                           Navigator.push(context,
@@ -83,14 +83,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   builder: (context) => SettingsScreen())
                           );
                         },
-                        icon: Icon(Icons.settings_rounded),
+                        icon: const Icon(Icons.settings_rounded),
                         iconSize: 50.0,
                         color: Colors.white,
                       ),
                     ],
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
                   child: Text(
                     'My Info',
@@ -101,60 +101,60 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 30.0,),
+                const SizedBox(height: 30.0,),
                 Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
                   child: Text(
                     'Level Of Training : ${userData.level}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25.0,
                       color: Colors.white,
                     ),
                   ),
                 ),
-                SizedBox(height: 30.0,),
+                const SizedBox(height: 30.0,),
                 Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
                   child: Text(
                     'Gender : ${userData.gender}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 30.0,
                       color: Colors.white,
                     ),
                   ),
                 ),
-                SizedBox(height: 30.0,),
+                const SizedBox(height: 30.0,),
                 Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
                   child: Text(
                     'Weight : ${userData.weight}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 30.0,
                       color: Colors.white,
                     ),
                   ),
                 ),
-                SizedBox(height: 30.0,),
+                const SizedBox(height: 30.0,),
                 Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
                   child: Text(
                     'height : ${userData.height}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 30.0,
                       color: Colors.white,
                     ),
                   ),
                 ),
-                SizedBox(height: 30.0,),
+                const SizedBox(height: 30.0,),
                 Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
                   child: Text(
                     'age : ${userData.age}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 30.0,
                       color: Colors.white,
@@ -163,12 +163,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 MaterialButton(onPressed: (){
                   Navigator.push(context, MaterialPageRoute(
-                      builder: (context)=>update_data()
+                      builder: (context)=>const update_data()
                   ),
                   );
                 },
                   child:
-                  Text('Update', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),),
+                  const Text('Update', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),),
 
                 ),
 

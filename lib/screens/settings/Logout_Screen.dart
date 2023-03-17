@@ -1,9 +1,12 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:online_coaching/screens/Home_Screen.dart';
 import 'package:online_coaching/screens/Profile_Screen.dart';
 
 
 class LogOutScreen extends StatefulWidget {
+  const LogOutScreen({super.key});
+
 
   @override
   State<LogOutScreen> createState() => _LogOutScreenState();
@@ -16,7 +19,7 @@ class _LogOutScreenState extends State<LogOutScreen> {
       body: Stack(
           children: [
       Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
       image: DecorationImage(
           image: AssetImage('assets/images/Online coaching.png'),
       fit: BoxFit.fill,
@@ -25,8 +28,8 @@ class _LogOutScreenState extends State<LogOutScreen> {
     ),
         Column(
           children: [
-            SizedBox(height: 80.0,),
-            Center(
+            const SizedBox(height: 80.0,),
+            const Center(
               child: Text('Log Out',
                 style: TextStyle(
                   color: Colors.white,
@@ -35,8 +38,8 @@ class _LogOutScreenState extends State<LogOutScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 30.0,),
-            Center(
+            const SizedBox(height: 30.0,),
+            const Center(
               child: Text('Are you sure you want to log out',
                 style: TextStyle(
                   color: Colors.white,
@@ -49,15 +52,15 @@ class _LogOutScreenState extends State<LogOutScreen> {
               children: [
                 TextButton(onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
-                }, child: Text('Yes',
+                }, child: const Text('Yes',
                 style: TextStyle(
                   color: Colors.white,
                 ),
                 )),
-                SizedBox(width: 20.0,),
+                const SizedBox(width: 20.0,),
                 TextButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
-                 }, child: Text('No',
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProfileScreen()));
+                 }, child: const Text('No',
                   style: TextStyle(
                     color: Colors.white,
                   ),

@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -23,11 +24,11 @@ class _MapsState extends State<Maps> {
   {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(icon:Icon(Icons.arrow_back),onPressed: ()
+        leading: IconButton(icon:const Icon(Icons.arrow_back),onPressed: ()
         {
-          Navigator.push(context,MaterialPageRoute(builder: (context)=>WelcomeScreen()));
+          Navigator.push(context,MaterialPageRoute(builder: (context)=>const WelcomeScreen()));
         },),
-        title: Text('Maps'),
+        title: const Text('Maps'),
         centerTitle: true,
       ),
       body:GoogleMap(initialCameraPosition: Maps.initialCameraPosition,

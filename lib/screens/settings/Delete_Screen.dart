@@ -1,8 +1,11 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:online_coaching/screens/Home_Screen.dart';
 
 
 class DeleteScreen extends StatefulWidget {
+  const DeleteScreen({super.key});
+
 
   @override
   State<DeleteScreen> createState() => _DeleteScreenState();
@@ -15,7 +18,7 @@ class _DeleteScreenState extends State<DeleteScreen> {
       body: Stack(
           children: [
       Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
       image: DecorationImage(
           image: AssetImage('assets/images/Online coaching.png'),
       fit: BoxFit.fill,
@@ -26,20 +29,20 @@ class _DeleteScreenState extends State<DeleteScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 60.0,),
+          const SizedBox(height: 60.0,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 5.0),
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 5.0),
             child: Row(
               children: [
                 IconButton(onPressed: ()
                 {
                   Navigator.pop(context);
-                }, icon: Icon(Icons.arrow_back_ios_new),
+                }, icon: const Icon(Icons.arrow_back_ios_new),
                   iconSize: 50.0,
                   color: Colors.white,
                 ),
-                SizedBox(width: 10.0,),
-                Text('Delete Your Account',
+                const SizedBox(width: 10.0,),
+                const Text('Delete Your Account',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -49,8 +52,8 @@ class _DeleteScreenState extends State<DeleteScreen> {
               ],
             ),
           ),
-          SizedBox(height: 80.0,),
-          Padding(
+          const SizedBox(height: 80.0,),
+          const Padding(
             padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0),
             child: Text('By Deleting Your Account,Your Data Will Be Deleted, And Cannot Restore it Again ',
             style: TextStyle(
@@ -59,13 +62,13 @@ class _DeleteScreenState extends State<DeleteScreen> {
             ),
             ),
           ),
-          SizedBox(height: 50.0,),
+          const SizedBox(height: 50.0,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0),
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0),
             child: Container(
               width: 300.0,
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.lock),
                     labelText: 'Enter Your Password',
                     labelStyle: TextStyle(
@@ -79,9 +82,9 @@ class _DeleteScreenState extends State<DeleteScreen> {
               ),
             ),
           ),
-          SizedBox(height: 40.0,),
+          const SizedBox(height: 40.0,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 100.0),
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 100.0),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -95,7 +98,7 @@ class _DeleteScreenState extends State<DeleteScreen> {
                 {
                   Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeScreen()));
                 },
-                child: Text('Confirm',
+                child: const Text('Confirm',
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,

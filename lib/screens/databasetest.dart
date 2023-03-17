@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'firebase_options.dart';
 
 // Change to false to use live database instance.
+// ignore: constant_identifier_names
 const USE_DATABASE_EMULATOR = true;
 // The port we've set the Firebase Database emulator to run on via the
 // `firebase.json` configuration file.
@@ -41,6 +42,7 @@ class DataBaseTest extends StatefulWidget {
   const DataBaseTest({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _DataBaseTestState createState() => _DataBaseTestState();
 }
 
@@ -52,8 +54,8 @@ class _DataBaseTestState extends State<DataBaseTest> {
   late StreamSubscription<DatabaseEvent> _messagesSubscription;
   bool _anchorToBottom = false;
 
-  String _kTestKey = 'Hello';
-  String _kTestValue = 'world!';
+  final String _kTestKey = 'Hello';
+  final String _kTestValue = 'world!';
   FirebaseException? _error;
   bool initialized = false;
 
@@ -86,14 +88,8 @@ class _DataBaseTestState extends State<DataBaseTest> {
     });
 
     try {
-      final counterSnapshot = await _counterRef.get();
 
-      print(
-        'Connected to directly configured database and read '
-            '${counterSnapshot.value}',
-      );
     } catch (err) {
-      print(err);
     }
 
     _counterSubscription = _counterRef.onValue.listen(
@@ -115,11 +111,8 @@ class _DataBaseTestState extends State<DataBaseTest> {
 
     _messagesSubscription = messagesQuery.onChildAdded.listen(
           (DatabaseEvent event) {
-        print('Child added: ${event.snapshot.value}');
       },
       onError: (Object o) {
-        final error = o as FirebaseException;
-        print('Error: ${error.code} ${error.message}');
       },
     );
   }
@@ -151,8 +144,8 @@ class _DataBaseTestState extends State<DataBaseTest> {
           _kTestKey: '$_kTestValue ${transactionResult.snapshot.value}'
         });
       }
-    } on FirebaseException catch (e) {
-      print(e.message);
+    // ignore: empty_catches
+    } on FirebaseException {
     }
   }
 

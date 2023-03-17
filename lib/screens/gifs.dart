@@ -23,6 +23,7 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
@@ -34,14 +35,14 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     controller1 = FlutterGifController(vsync: this);
     controller2 = FlutterGifController(vsync: this);
     controller4 = FlutterGifController(vsync: this);
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       controller1.repeat(
         min: 0,
         max: 53,
         period: const Duration(milliseconds: 200),
       );
     });
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       controller2.repeat(
         min: 0,
         max: 13,
@@ -68,11 +69,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.grey,
-          title: Text('gif'),
+          title: const Text('gif'),
         ),
         body: ListView(
           children: [
-            GifImage(image: AssetImage('assets/gifs/leg/leg.gif'), controller: controller2,
+            GifImage(image: const AssetImage('assets/gifs/leg/leg.gif'), controller: controller2,
             ),
           ],
         ),

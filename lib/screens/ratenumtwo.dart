@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _MyAppState createState() => _MyAppState();
 }
 
@@ -14,7 +17,7 @@ class _MyAppState extends State<MyApp> {
 
   double _userRating = 3.0;
   int _ratingBarMode = 1;
-  double _initialRating = 2.0;
+  final double _initialRating = 2.0;
   bool _isRTLMode = false;
   bool _isVertical = false;
 
@@ -36,22 +39,22 @@ class _MyAppState extends State<MyApp> {
         appBarTheme: AppBarTheme(
           titleTextStyle: Theme.of(context)
               .textTheme
-              .headline6
+              .titleLarge
               ?.copyWith(color: Colors.white),
         ),
       ),
       home: Builder(
         builder: (context) => Scaffold(
           appBar: AppBar(
-            title: Text('Flutter Rating Bar'),
+            title: const Text('Flutter Rating Bar'),
             actions: [
               IconButton(
-                icon: Icon(Icons.settings),
+                icon: const Icon(Icons.settings),
                 color: Colors.white,
                 onPressed: () async {
                   _selectedIcon = await showDialog<IconData>(
                     context: context,
-                    builder: (context) => IconAlert(),
+                    builder: (context) => const IconAlert(),
                   );
                   _ratingBarMode = 1;
                   setState(() {});
@@ -66,17 +69,17 @@ class _MyAppState extends State<MyApp> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  SizedBox(
+                  const SizedBox(
                     height: 40.0,
                   ),
                   _heading('Rating Bar'),
                   _ratingBar(_ratingBarMode),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   Text(
                     'Rating: $_rating',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 40.0),
+                  const SizedBox(height: 40.0),
                   _heading('Rating Indicator'),
                   RatingBarIndicator(
                     rating: _userRating,
@@ -89,14 +92,14 @@ class _MyAppState extends State<MyApp> {
                     unratedColor: Colors.amber.withAlpha(50),
                     direction: _isVertical ? Axis.vertical : Axis.horizontal,
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: TextFormField(
                       controller: _ratingController,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                        border: const OutlineInputBorder(),
                         hintText: 'Enter rating',
                         labelText: 'Enter rating',
                         suffixIcon: MaterialButton(
@@ -105,25 +108,25 @@ class _MyAppState extends State<MyApp> {
                                 double.parse(_ratingController.text ?? '0.0');
                             setState(() {});
                           },
-                          child: Text('Rate'),
+                          child: const Text('Rate'),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 40.0),
+                  const SizedBox(height: 40.0),
                   _heading('Scrollable Rating Indicator'),
                   RatingBarIndicator(
                     rating: 8.2,
                     itemCount: 20,
                     itemSize: 30.0,
-                    physics: BouncingScrollPhysics(),
-                    itemBuilder: (context, _) => Icon(
+                    physics: const BouncingScrollPhysics(),
+                    itemBuilder: (context, _) => const Icon(
                       Icons.star,
                       color: Colors.amber,
                     ),
                   ),
-                  SizedBox(height: 20.0),
-                  Text(
+                  const SizedBox(height: 20.0),
+                  const Text(
                     'Rating Bar Modes',
                     style: TextStyle(fontWeight: FontWeight.w300),
                   ),
@@ -137,7 +140,7 @@ class _MyAppState extends State<MyApp> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         'Switch to Vertical Bar',
                         style: TextStyle(fontWeight: FontWeight.w300),
                       ),
@@ -155,7 +158,7 @@ class _MyAppState extends State<MyApp> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         'Switch to RTL Mode',
                         style: TextStyle(fontWeight: FontWeight.w300),
                       ),
@@ -187,7 +190,7 @@ class _MyAppState extends State<MyApp> {
         dense: true,
         title: Text(
           'Mode $value',
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w300,
             fontSize: 12.0,
           ),
@@ -212,7 +215,7 @@ class _MyAppState extends State<MyApp> {
           unratedColor: Colors.amber.withAlpha(50),
           itemCount: 5,
           itemSize: 50.0,
-          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+          itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
           itemBuilder: (context, _) => Icon(
             _selectedIcon ?? Icons.star,
             color: Colors.amber,
@@ -235,7 +238,7 @@ class _MyAppState extends State<MyApp> {
             half: _image('assets/heart_half.png'),
             empty: _image('assets/heart_border.png'),
           ),
-          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+          itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
           onRatingUpdate: (rating) {
             setState(() {
               _rating = rating;
@@ -248,31 +251,31 @@ class _MyAppState extends State<MyApp> {
           initialRating: _initialRating,
           direction: _isVertical ? Axis.vertical : Axis.horizontal,
           itemCount: 5,
-          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+          itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
           itemBuilder: (context, index) {
             switch (index) {
               case 0:
-                return Icon(
+                return const Icon(
                   Icons.sentiment_very_dissatisfied,
                   color: Colors.red,
                 );
               case 1:
-                return Icon(
+                return const Icon(
                   Icons.sentiment_dissatisfied,
                   color: Colors.redAccent,
                 );
               case 2:
-                return Icon(
+                return const Icon(
                   Icons.sentiment_neutral,
                   color: Colors.amber,
                 );
               case 3:
-                return Icon(
+                return const Icon(
                   Icons.sentiment_satisfied,
                   color: Colors.lightGreen,
                 );
               case 4:
-                return Icon(
+                return const Icon(
                   Icons.sentiment_very_satisfied,
                   color: Colors.green,
                 );
@@ -305,12 +308,12 @@ class _MyAppState extends State<MyApp> {
     children: [
       Text(
         text,
-        style: TextStyle(
+        style: const TextStyle(
           fontWeight: FontWeight.w300,
           fontSize: 24.0,
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 20.0,
       ),
     ],
@@ -318,10 +321,12 @@ class _MyAppState extends State<MyApp> {
 }
 
 class IconAlert extends StatelessWidget {
+  const IconAlert({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(
+      title: const Text(
         'Select Icon',
         style: TextStyle(
           fontWeight: FontWeight.w300,
@@ -330,8 +335,8 @@ class IconAlert extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
-      titlePadding: EdgeInsets.all(12.0),
-      contentPadding: EdgeInsets.all(0),
+      titlePadding: const EdgeInsets.all(12.0),
+      contentPadding: const EdgeInsets.all(0),
       content: Wrap(
         children: [
           _iconButton(context, Icons.home),

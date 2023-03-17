@@ -29,7 +29,7 @@ class SideBarScreen extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: [
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(image: AssetImage('assets/images/14.png'),
                     fit: BoxFit.contain,
                   ),
@@ -46,29 +46,29 @@ class SideBarScreen extends StatelessWidget {
               ),
               ListTile(
                 title: const Text('Profile'),
-                leading: Icon(Icons.account_circle),
+                leading: const Icon(Icons.account_circle),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>ProfileScreen()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const ProfileScreen()));
                 },
               ),
               ListTile(
                 title: const Text('Workout'),
-                leading: Icon(Icons.directions_run),
+                leading: const Icon(Icons.directions_run),
 
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> TrainingScreen()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> const TrainingScreen()));
                 },
               ),
               ListTile(
                 title: const Text('Coaches'),
-                leading: Icon(Icons.person),
+                leading: const Icon(Icons.person),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Coaches()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const Coaches()));
                 },
               ),
               ListTile(
                 title: const Text('Maps'),
-                leading: Icon(Icons.map),
+                leading: const Icon(Icons.map),
 
                 onTap: () {
                   Navigator.push(context,MaterialPageRoute(builder: (context)=>Maps()));
@@ -76,7 +76,7 @@ class SideBarScreen extends StatelessWidget {
               ),
               ListTile(
                 title: const Text('Setting'),
-                leading: Icon(Icons.settings),
+                leading: const Icon(Icons.settings),
 
                 onTap: () {
                   Navigator.push(context,MaterialPageRoute(builder: (context)=>SettingsScreen()));

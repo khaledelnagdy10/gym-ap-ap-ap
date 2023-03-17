@@ -12,7 +12,7 @@ class WelcomeScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(children: [
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/Online coaching.png'),
               fit: BoxFit.fill,
@@ -22,8 +22,8 @@ class WelcomeScreen extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 150.0,),
-            Center(
+            const SizedBox(height: 150.0,),
+            const Center(
               child: Text('Choose What Do You Want',
               style: TextStyle(
                 color: Colors.white,
@@ -32,7 +32,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
               ),
             ),
-            SizedBox(height: 60.0,),
+            const SizedBox(height: 60.0,),
             Container(
               height: 40.0,
               width: 200.0,
@@ -42,9 +42,9 @@ class WelcomeScreen extends StatelessWidget {
               ),
               child: MaterialButton(onPressed: ()
               {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>TrainingScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const TrainingScreen()));
               },
-              child: Center(
+              child: const Center(
                 child: Text('Workout',
                 style: TextStyle(
                   color: Colors.black,
@@ -55,7 +55,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
               ),
             ),
-            SizedBox(height: 60.0,),
+            const SizedBox(height: 60.0,),
             Container(
               height: 40.0,
               width: 200.0,
@@ -65,9 +65,9 @@ class WelcomeScreen extends StatelessWidget {
               ),
               child: MaterialButton(onPressed: ()
               {
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>Coaches()));
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>const Coaches()));
               },
-                child: Center(
+                child: const Center(
                   child: Text('Coaches',
                     style: TextStyle(
                       color: Colors.black,
@@ -78,7 +78,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 60.0,),
+            const SizedBox(height: 60.0,),
             Container(
               height: 40.0,
               width: 200.0,
@@ -89,7 +89,7 @@ class WelcomeScreen extends StatelessWidget {
               child: MaterialButton(onPressed: (){
                 Navigator.push(context,MaterialPageRoute(builder: (context)=>Maps()));
               },
-                child: Center(
+                child: const Center(
                   child: Text('Maps',
                     style: TextStyle(
                       color: Colors.black,
@@ -100,7 +100,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 60.0,),
+            const SizedBox(height: 60.0,),
             Container(
               height: 40.0,
               width: 200.0,
@@ -110,9 +110,9 @@ class WelcomeScreen extends StatelessWidget {
               ),
               child: MaterialButton(onPressed: ()
               {
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>ProfileScreen()));
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>const ProfileScreen()));
               },
-                child: Center(
+                child: const Center(
                   child: Text('profile',
                     style: TextStyle(
                       color: Colors.black,

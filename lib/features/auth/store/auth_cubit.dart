@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:online_coaching/core/global.dart';
 import 'package:online_coaching/core/services/auth_services.dart';
 import 'package:online_coaching/features/auth/store/auth_state.dart';
 
@@ -15,12 +14,13 @@ class AuthCubit extends Cubit<AuthState> {
   final age = TextEditingController();
   final level = TextEditingController();
   final gender = TextEditingController();
+  final GlobalKey<FormState> keyForm = GlobalKey();
 
   String currentUserTypeSelected = 'user';
 
   AuthCubit({required this.authServices}) : super(AuthInitial());
 
-  void onChangeValue(value){
+  void onChangeValue(value) {
     currentUserTypeSelected = value;
     emit(UserType());
   }
@@ -32,19 +32,29 @@ class AuthCubit extends Cubit<AuthState> {
     }
 
     if (name.text.length < 4) {
-      emit(AuthFail(errorMessage: "Name length should be 4 characters or more."));
+      emit(AuthFail(
+          errorMessage: "Name length should be 4 characters or more."));
       return;
     }
 
     if (password.text.length < 8) {
-      emit(AuthFail(errorMessage: "Password length should be 8 characters or more."));
+      emit(AuthFail(
+          errorMessage: "Password length should be 8 characters or more."));
       return;
     }
 
     emit(AuthLoading());
     try {
-      await authServices.register(email.text.trim(), password.text.trim(), name.text.trim(), double.parse(weight.text.trim()),
-          double.parse(height.text.trim()), gender.text.trim(), int.parse(age.text.trim()), level.text.trim(),currentUserTypeSelected );
+      await authServices.register(
+          email.text.trim(),
+          password.text.trim(),
+          name.text.trim(),
+          double.parse(weight.text.trim()),
+          double.parse(height.text.trim()),
+          gender.text.trim(),
+          int.parse(age.text.trim()),
+          level.text.trim(),
+          currentUserTypeSelected);
       emit(AuthSuccess());
     } on FirebaseException catch (e) {
       emit(AuthFail(errorMessage: e.message!));
@@ -52,16 +62,9 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   loginUser() async {
-    if (email.text.isEmpty || password.text.isEmpty) {
-      emit(AuthFail(errorMessage: "Please complete the fields."));
+    if (!keyForm.currentState!.validate()) {
       return;
     }
-
-    if (password.text.length < 8) {
-      emit(AuthFail(errorMessage: "Password length should be 8 characters or more."));
-      return;
-    }
-
     emit(AuthLoading());
     try {
       await authServices.login(email.text.trim(), password.text.trim());
@@ -71,5 +74,6 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  static AuthCubit get(BuildContext context) => BlocProvider.of<AuthCubit>(context);
+  static AuthCubit get(BuildContext context) =>
+      BlocProvider.of<AuthCubit>(context);
 }

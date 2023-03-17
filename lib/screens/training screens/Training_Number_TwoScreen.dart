@@ -13,7 +13,7 @@ class TrainingNumTwo extends StatelessWidget {
       body: Stack(
           children: [
       Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
       image: DecorationImage(
           image: AssetImage('assets/images/12.png'),
       fit: BoxFit.fill,
@@ -23,14 +23,14 @@ class TrainingNumTwo extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 300.0,),
+                const SizedBox(height: 300.0,),
                 Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 95.0),
+                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 95.0),
                   child: TextButton(onPressed: ()
                   {
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Arm_Screen()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>const Arm_Screen()));
                   },
-                    child:Text('Arm Workout',
+                    child:const Text('Arm Workout',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 30.0,
@@ -38,28 +38,28 @@ class TrainingNumTwo extends StatelessWidget {
                       ),
                     ), ),
                 ),
-                SizedBox(height: 120.0,),
+                const SizedBox(height: 120.0,),
                 Row(mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     IconButton(onPressed: ()
                     {
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>TrainingScreen()));
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>const TrainingScreen()));
                     },
 
-                      icon: Icon(Icons.arrow_back_outlined),
+                      icon: const Icon(Icons.arrow_back_outlined),
                       iconSize: 50.0,
                       color: Colors.white,
                     ),
                   ],
                 ),
-                SizedBox(height: 45.0,),
+                const SizedBox(height: 45.0,),
                 Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 105.0),
+                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 105.0),
                   child: TextButton(onPressed: ()
                   {
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Leg_Screen()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>const Leg_Screen()));
                   },
-                    child:Text('Leg Workout',
+                    child:const Text('Leg Workout',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 30.0,
@@ -67,14 +67,14 @@ class TrainingNumTwo extends StatelessWidget {
                       ),
                     ), ),
                 ),
-                SizedBox(height: 225.0,),
+                const SizedBox(height: 225.0,),
                 Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 110.0),
+                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 110.0),
                   child: TextButton(onPressed: ()
                   {
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>CardioScreen()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>const CardioScreen()));
                   },
-                    child:Text('Cardio Workout',
+                    child:const Text('Cardio Workout',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24.0,

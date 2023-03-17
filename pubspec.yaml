@@ -1,10 +1,10 @@
 name: online_coaching
 description: A new Flutter project.
-publish_to: 'none' 
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.3 <3.0.0'
+  sdk: ">=2.19.3 <3.0.0"
 
 dependencies:
   flutter:
@@ -22,7 +22,6 @@ dependencies:
   firebase_database: ^10.0.15
   flutter_gif: ^0.0.4
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -35,7 +34,3 @@ flutter:
     - assets/images/
     - assets/gifs/leg/
     - assets/gifs/chest/
-    - assets/gifs/cardio/
-    - assets/gifs/arm/
-    - assets/gifs/back/
-    - assets/gifs/shoulder/

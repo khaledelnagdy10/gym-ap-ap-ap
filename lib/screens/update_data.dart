@@ -12,6 +12,7 @@ class update_data extends StatefulWidget {
   State<update_data> createState() => _update_dataState();
 }
 
+// ignore: camel_case_types
 class _update_dataState extends State<update_data> {
   final _fireStore = FirebaseFirestore.instance;
 
@@ -65,14 +66,14 @@ class _update_dataState extends State<update_data> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '${userData.name}',
+                          userData.name,
                           style: const TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),
                         ),
                         Text(
-                          '${userData.email}',
+                          userData.email,
                           style: const TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,

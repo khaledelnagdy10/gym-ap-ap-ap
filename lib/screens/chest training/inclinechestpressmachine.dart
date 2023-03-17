@@ -18,8 +18,11 @@ class Gif extends StatelessWidget {
 }
 
 class InclineChestPress extends StatefulWidget {
+  const InclineChestPress({super.key});
+
 
   @override
+  // ignore: library_private_types_in_public_api
   _InclineChestPressState createState() => _InclineChestPressState();
 }
 
@@ -31,14 +34,14 @@ class _InclineChestPressState extends State<InclineChestPress> with TickerProvid
     controller1 = FlutterGifController(vsync: this);
     controller2 = FlutterGifController(vsync: this);
     controller4 = FlutterGifController(vsync: this);
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       controller1.repeat(
         min: 0,
         max: 53,
         period: const Duration(milliseconds: 200),
       );
     });
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       controller2.repeat(
         min: 0,
         max: 13,
@@ -65,11 +68,11 @@ class _InclineChestPressState extends State<InclineChestPress> with TickerProvid
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.grey,
-          title: Text('gif'),
+          title: const Text('gif'),
         ),
         body: ListView(
           children: [
-            GifImage(image: AssetImage('assets/gifs/chest/incline.gif'), controller: controller2,
+            GifImage(image: const AssetImage('assets/gifs/chest/incline.gif'), controller: controller2,
             ),
           ],
         ),

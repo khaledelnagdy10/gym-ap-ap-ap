@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:online_coaching/screens/Profile_Screen.dart';
 
@@ -19,7 +20,7 @@ class _AboutYouState extends State<AboutYou> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/Online coaching.png',),
                 fit: BoxFit.fill,
@@ -32,8 +33,8 @@ class _AboutYouState extends State<AboutYou> {
               child: Column(
                 children:
                 [
-                  SizedBox(height: 50.0,),
-                  Text(
+                  const SizedBox(height: 50.0,),
+                  const Text(
                     'About You',
                     style: TextStyle(
                       fontSize: 40.0,
@@ -41,8 +42,8 @@ class _AboutYouState extends State<AboutYou> {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 30.0,),
-                  Text(
+                  const SizedBox(height: 30.0,),
+                  const Text(
                     'Select Your Gender',
                     style: TextStyle(
                       fontSize: 30.0,
@@ -50,9 +51,9 @@ class _AboutYouState extends State<AboutYou> {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 20.0,),
+                  const SizedBox(height: 20.0,),
                   Padding(
-                    padding: EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
+                    padding: const EdgeInsetsDirectional.symmetric(horizontal: 40.0,),
                     child: Row(
                       children:
                       [
@@ -69,7 +70,7 @@ class _AboutYouState extends State<AboutYou> {
                               color: ismale? Colors.blue:Colors.white,
                               borderRadius: BorderRadius.circular(20.0),
                             ),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 'Male',
                                 style: TextStyle(
@@ -81,7 +82,7 @@ class _AboutYouState extends State<AboutYou> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10.0,),
+                        const SizedBox(width: 10.0,),
                         GestureDetector(
                           onTap: ()
                           {
@@ -95,7 +96,7 @@ class _AboutYouState extends State<AboutYou> {
                                 color: !ismale?Colors.blue:Colors.white,
                                 borderRadius: BorderRadius.circular(20.0)
                             ),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 'Female',
                                 style: TextStyle(
@@ -110,7 +111,7 @@ class _AboutYouState extends State<AboutYou> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height:40.0,
                   ),
                   Container(
@@ -124,14 +125,14 @@ class _AboutYouState extends State<AboutYou> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children:
                       [
-                        Text('AGE',
+                        const Text('AGE',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 35.0,
                           ),
                         ),
                         Text('${age}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 25.0,
                           ),
@@ -147,7 +148,7 @@ class _AboutYouState extends State<AboutYou> {
                                 });
                               },
                               mini: true,
-                              child: Icon(
+                              child: const Icon(
                                 Icons.add,
                               ),
                               heroTag: 'age+',
@@ -159,19 +160,19 @@ class _AboutYouState extends State<AboutYou> {
                                 });
                               },
                               mini: true,
-                              child: Icon(
+                              heroTag: 'age-',
+                              child: const Icon(
                                 Icons.remove,
                               ),
-                              heroTag: 'age-',
                             ),
                           ],
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 10.0,),
+                  const SizedBox(height: 10.0,),
                   Padding(
-                    padding: EdgeInsetsDirectional.symmetric(horizontal:55.0),
+                    padding: const EdgeInsetsDirectional.symmetric(horizontal:55.0),
                     child: Row(
                       children:
                       [
@@ -186,14 +187,14 @@ class _AboutYouState extends State<AboutYou> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children:
                             [
-                              Text('weight',
+                              const Text('weight',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 35.0,
                                 ),
                               ),
                               Text('${weight.round()}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontWeight: FontWeight.w900,
                                   fontSize: 25.0,
                                 ),
@@ -209,7 +210,7 @@ class _AboutYouState extends State<AboutYou> {
                                       });
                                     },
                                     mini: true,
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.add,
                                     ),
                                     heroTag: 'weight+',
@@ -221,7 +222,7 @@ class _AboutYouState extends State<AboutYou> {
                                       });
                                     },
                                     mini: true,
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.remove,
                                     ),
                                     heroTag: 'weight-',
@@ -231,7 +232,7 @@ class _AboutYouState extends State<AboutYou> {
                             ],
                           ),
                         ),
-                        SizedBox(width: 15.0,),
+                        const SizedBox(width: 15.0,),
                         Container(
                           height: 200.0,
                           width: 150.0,
@@ -243,14 +244,14 @@ class _AboutYouState extends State<AboutYou> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children:
                             [
-                              Text('height',
+                              const Text('height',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 35.0,
                                 ),
                               ),
                               Text('${height.round()}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontWeight: FontWeight.w900,
                                   fontSize: 25.0,
                                 ),
@@ -266,7 +267,7 @@ class _AboutYouState extends State<AboutYou> {
                                       });
                                     },
                                     mini: true,
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.add,
                                     ),
                                     heroTag: 'height+',
@@ -278,7 +279,7 @@ class _AboutYouState extends State<AboutYou> {
                                       });
                                     },
                                     mini: true,
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.remove,
                                     ),
                                     heroTag: 'height-',
@@ -291,7 +292,7 @@ class _AboutYouState extends State<AboutYou> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15.0,
                   ),
                   Container(
@@ -302,7 +303,7 @@ class _AboutYouState extends State<AboutYou> {
                     width: 130.0,
                     child: Center(
                       child: MaterialButton(
-                          child: Text('NEXT',
+                          child: const Text('NEXT',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
@@ -312,7 +313,7 @@ class _AboutYouState extends State<AboutYou> {
                           onPressed: ()
                           {
                             Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=>ProfileScreen()
+                            MaterialPageRoute(builder: (context)=>const ProfileScreen()
                             ),
                             );
                           }

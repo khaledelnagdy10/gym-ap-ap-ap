@@ -16,7 +16,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: Stack(
        children: [
        Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
       image: DecorationImage(
       image: AssetImage('assets/images/Online coaching.png'),
       fit: BoxFit.fill,
@@ -25,21 +25,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
     ),
        Column(
         children: [
-          SizedBox(height: 60.0,),
+          const SizedBox(height: 60.0,),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 25.0),
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 25.0),
             child: Row(
               children:
               [
                 IconButton(onPressed: ()
                 {
                   Navigator.pop(context);
-                }, icon: Icon(Icons.arrow_back_ios_new),
+                }, icon: const Icon(Icons.arrow_back_ios_new),
                 iconSize: 50.0,
                 color: Colors.white,
                 ),
-                SizedBox(width: 40.0,),
-                Text('Settings',
+                const SizedBox(width: 40.0,),
+                const Text('Settings',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -49,12 +49,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ],
             ),
           ),
-          SizedBox(height: 50.0,),
+          const SizedBox(height: 50.0,),
           TextButton(
             onPressed: (){
               Navigator.pop(context);
             },
-            child: Text('My Account',
+            child: const Text('My Account',
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -62,13 +62,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             ),
           ),
-          SizedBox(height: 50.0,),
+          const SizedBox(height: 50.0,),
           TextButton(
             onPressed: ()
             {
               Navigator.push(context, MaterialPageRoute(builder:(context)=> EditScreen()));
             },
-            child: Text('Edit Profile',
+            child: const Text('Edit Profile',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -76,12 +76,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
           ),
-          SizedBox(height: 50.0,),
+          const SizedBox(height: 50.0,),
           TextButton(
             onPressed: (){
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>DeleteScreen()));
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>const DeleteScreen()));
             },
-            child: Text('Delete Account',
+            child: const Text('Delete Account',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -89,13 +89,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
           ),
-          SizedBox(height: 50.0,),
+          const SizedBox(height: 50.0,),
           TextButton(
             onPressed: ()
             {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>ChangePaswwordScreen()));
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>const ChangePaswwordScreen()));
             },
-            child: Text('Change Password',
+            child: const Text('Change Password',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -103,10 +103,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
           ),
-          SizedBox(height: 50.0,),
+          const SizedBox(height: 50.0,),
           TextButton(
             onPressed: (){},
-            child: Text('Log Out',
+            child: const Text('Log Out',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

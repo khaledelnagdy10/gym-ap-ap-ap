@@ -11,7 +11,7 @@ class ChestScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(children: [
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/13.png'),
               fit: BoxFit.fill,
@@ -21,28 +21,28 @@ class ChestScreen extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 50.0,),
+            const SizedBox(height: 50.0,),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 IconButton(onPressed: ()
                 {
                   Navigator.pop(context);
-                }, icon: Icon(Icons.arrow_back_outlined),
+                }, icon: const Icon(Icons.arrow_back_outlined),
                   color: Colors.white,
                   iconSize: 30.0,
                 ),
               ],
             ),
-            SizedBox(height: 120.0,),
+            const SizedBox(height: 120.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: ()
                 {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>ChestBarFlat()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const ChestBarFlat()));
                 },
-                child: Text('Chest Bar Flat',
+                child: const Text('Chest Bar Flat',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -51,8 +51,8 @@ class ChestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -62,14 +62,14 @@ class ChestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 80.0,),
+            const SizedBox(height: 80.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 120.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 120.0),
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>VideoPlayerApp()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const VideoPlayerApp()));
                 },
-                child: Text('Incline Chest Press',
+                child: const Text('Incline Chest Press',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ class ChestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 120.0),
               child: Text(' Machine',
                 style: TextStyle(
@@ -88,8 +88,8 @@ class ChestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -99,15 +99,15 @@ class ChestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 60.0,),
+            const SizedBox(height: 60.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>VideoPlayerApp()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const VideoPlayerApp()));
 
                 },
-                child: Text('Chest Fly',
+                child: const Text('Chest Fly',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -116,7 +116,7 @@ class ChestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('Machine',
                 style: TextStyle(
@@ -126,8 +126,8 @@ class ChestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -137,14 +137,14 @@ class ChestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 60.0,),
+            const SizedBox(height: 60.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>VideoPlayerApp()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const VideoPlayerApp()));
                 },
-                child: Text('Incline db',
+                child: const Text('Incline db',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -153,7 +153,7 @@ class ChestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('Chest Press',
                 style: TextStyle(
@@ -163,8 +163,8 @@ class ChestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(

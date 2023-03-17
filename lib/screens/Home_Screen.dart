@@ -1,5 +1,8 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:online_coaching/features/auth/screens/auth_Screen.dart';
+import 'package:online_coaching/features/auth/screens/register_screen.dart';
+
+import '../features/auth/screens/login_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -119,11 +122,10 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const AuthScreen()),
-
+                        MaterialPageRoute(
+                            builder: (context) => const RegisterScreen()),
                       );
                     }),
-                
               ),
             ),
             const SizedBox(
@@ -167,7 +169,8 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const AuthScreen(isLogin: true)),
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()),
                       );
                     }),
               ),

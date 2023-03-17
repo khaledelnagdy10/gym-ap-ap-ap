@@ -11,7 +11,7 @@ class BackScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(children: [
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/14.png'),
               fit: BoxFit.fill,
@@ -21,27 +21,27 @@ class BackScreen extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 50.0,),
+            const SizedBox(height: 50.0,),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 IconButton(onPressed: ()
                 {
                   Navigator.pop(context);
-                }, icon: Icon(Icons.arrow_back_outlined),
+                }, icon: const Icon(Icons.arrow_back_outlined),
                   color: Colors.white,
                   iconSize: 30.0,
                 ),
               ],
             ),
-            SizedBox(height: 150.0,),
+            const SizedBox(height: 150.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Gif()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const Gif()));
                 },
-                child: Text('Lat Pull Down',
+                child: const Text('Lat Pull Down',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -50,8 +50,8 @@ class BackScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -61,12 +61,12 @@ class BackScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 60.0,),
+            const SizedBox(height: 60.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 120.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 120.0),
               child: TextButton(
                 onPressed: (){},
-                child: Text('T-Bar',
+                child: const Text('T-Bar',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -75,8 +75,8 @@ class BackScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -86,12 +86,12 @@ class BackScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 80.0,),
+            const SizedBox(height: 80.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){},
-                child: Text('Seated Row',
+                child: const Text('Seated Row',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -100,8 +100,8 @@ class BackScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 15 Times',
                 style: TextStyle(
@@ -111,12 +111,12 @@ class BackScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 110.0,),
+            const SizedBox(height: 110.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){},
-                child: Text('db Row',
+                child: const Text('db Row',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -125,8 +125,8 @@ class BackScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('4 Sets x 12 Times',
                 style: TextStyle(
@@ -136,12 +136,12 @@ class BackScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 50.0,),
+            const SizedBox(height: 50.0,),
             Center(
               child: IconButton(onPressed: ()
               {
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>BackNumTwoScreen()));
-              }, icon: Icon(Icons.arrow_forward),
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>const BackNumTwoScreen()));
+              }, icon: const Icon(Icons.arrow_forward),
                 color: Colors.white,
                 iconSize: 30.0,
               ),

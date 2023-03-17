@@ -10,7 +10,7 @@ class Arm_Screen extends StatelessWidget {
     return Scaffold(
       body: Stack(children: [
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/17.png'),
               fit: BoxFit.fill,
@@ -20,27 +20,27 @@ class Arm_Screen extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 50.0,),
+            const SizedBox(height: 50.0,),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 IconButton(onPressed: ()
                 {
                   Navigator.pop(context);
-                }, icon: Icon(Icons.arrow_back_outlined),
+                }, icon: const Icon(Icons.arrow_back_outlined),
                   color: Colors.white,
                   iconSize: 30.0,
                 ),
               ],
             ),
-            SizedBox(height: 150.0,),
+            const SizedBox(height: 150.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Gif()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const Gif()));
                 },
-                child: Text('Biceps Curl',
+                child: const Text('Biceps Curl',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -49,8 +49,8 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -60,14 +60,14 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 80.0,),
+            const SizedBox(height: 80.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 120.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 120.0),
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Gif()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const Gif()));
                 },
-                child: Text('Rope Biceps Curl',
+                child: const Text('Rope Biceps Curl',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -76,8 +76,8 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -87,14 +87,14 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 70.0,),
+            const SizedBox(height: 70.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Gif()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const Gif()));
                 },
-                child: Text('Kick Back',
+                child: const Text('Kick Back',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -103,8 +103,8 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -114,14 +114,14 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 90.0,),
+            const SizedBox(height: 90.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Gif()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const Gif()));
                 },
-                child: Text('Over Head',
+                child: const Text('Over Head',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -130,8 +130,8 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
-            Padding(
+            const SizedBox(height: 5,),
+            const Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: Text('3 Sets x 12 Times',
                 style: TextStyle(
@@ -141,7 +141,7 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 50.0,),
+            const SizedBox(height: 50.0,),
           ],
         ),
       ]),

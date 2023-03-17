@@ -21,7 +21,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
       body: Stack(
           children: [
       Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
       image: DecorationImage(
           image: AssetImage('assets/images/11.png'),
       fit: BoxFit.fill,
@@ -31,14 +31,14 @@ class _TrainingScreenState extends State<TrainingScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 300.0,),
+            const SizedBox(height: 300.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 95.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 95.0),
               child: TextButton(onPressed: ()
               {
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>ChestScreen()));
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>const ChestScreen()));
               },
-                  child:Text('Chest Workout',
+                  child:const Text('Chest Workout',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30.0,
@@ -46,35 +46,35 @@ class _TrainingScreenState extends State<TrainingScreen> {
                   ),
                   ), ),
             ),
-            SizedBox(height: 120.0,),
+            const SizedBox(height: 120.0,),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(onPressed: ()
                 {
                   Navigator.push(context,MaterialPageRoute(builder: (context)=>SideBarScreen()));
-                }, icon: Icon(Icons.arrow_back),
+                }, icon: const Icon(Icons.arrow_back),
                   iconSize: 50.0,
                   color: Colors.white,
                 ),
-                SizedBox(width: 295.0,),
+                const SizedBox(width: 295.0,),
                 IconButton(onPressed: ()
                 {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>TrainingNumTwo()));
-                }, icon: Icon(Icons.arrow_forward),
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const TrainingNumTwo()));
+                }, icon: const Icon(Icons.arrow_forward),
                   iconSize: 50.0,
                   color: Colors.white,
                 ),
               ],
             ),
-            SizedBox(height: 45.0,),
+            const SizedBox(height: 45.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 95.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 95.0),
               child: TextButton(onPressed: ()
               {
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>BackScreen()));
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>const BackScreen()));
               },
-                  child:Text('Back Workout',
+                  child:const Text('Back Workout',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30.0,
@@ -82,13 +82,13 @@ class _TrainingScreenState extends State<TrainingScreen> {
                   ),
                   ), ),
             ),
-            SizedBox(height: 235.0,),
+            const SizedBox(height: 235.0,),
             Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 95.0),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 95.0),
               child: TextButton(onPressed: (){
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>ShoulderScreen()));
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>const ShoulderScreen()));
               },
-                  child:Text('Shoulder Workout',
+                  child:const Text('Shoulder Workout',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 24.0,
