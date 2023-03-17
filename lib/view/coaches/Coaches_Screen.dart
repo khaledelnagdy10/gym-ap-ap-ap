@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:online_coaching/view/coaches/coachnumone.dart';
 
-import '../../core/models/user_model.dart';
+import '../../models/user_model.dart';
 
 class Coaches extends StatelessWidget {
   const Coaches({Key? key}) : super(key: key);

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:online_coaching/features/auth/store/auth_cubit.dart';
-import 'package:online_coaching/features/auth/store/auth_state.dart';
+import 'package:online_coaching/view/auth/logic/auth_cubit.dart';
+import 'package:online_coaching/view/auth/logic/auth_state.dart';
 import 'package:online_coaching/view/welcome_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,9 @@ class LoginScreen extends StatelessWidget {
       if (state is AuthSuccess) {
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => const WelcomeScreen()));
-      } else if (state is AuthFail) {
+      }
+
+      if (state is AuthFail) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
               backgroundColor: Colors.red, content: Text(state.errorMessage)),
@@ -45,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(height: 80.0),
                       const Center(
                         child: Text(
-                          'Login Now',
+                          'Register Now',
                           style: TextStyle(
                             fontSize: 40.0,
                             fontWeight: FontWeight.bold,
@@ -56,13 +58,47 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(
                         height: 56.0,
                       ),
-                      _buildCustomTextFormField(
-                          'email', Icons.email, cubit.email, false),
+                      _buildCustomDropdownButton(['coach', 'user'],
+                          cubit.selectedUserType, cubit.onChangeUserType),
                       const SizedBox(
                         height: 15.0,
                       ),
                       _buildCustomTextFormField(
-                          'password', Icons.lock, cubit.password, true),
+                          'user name', Icons.person_2, cubit.name),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField(
+                          'height', Icons.height, cubit.height),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField(
+                          'weight', Icons.line_weight, cubit.weight),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField('age', Icons.person, cubit.age),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomDropdownButton(['male', 'famele'],
+                          cubit.gender, cubit.onChangeGender),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField(
+                          'user level', Icons.numbers, cubit.level),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField(
+                          'Email', Icons.email, cubit.password),
+                      const SizedBox(
+                        height: 15.0,
+                      ),
+                      _buildCustomTextFormField(
+                          'Password', Icons.lock, cubit.password),
                       const SizedBox(
                         height: 80.0,
                       ),
@@ -75,14 +111,14 @@ class LoginScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20.0)),
                           width: 200.0,
                           child: MaterialButton(
-                            onPressed: cubit.loginUser,
+                            onPressed: cubit.registerUser,
                             child: state is AuthLoading
                                 ? const SizedBox(
                                     width: 25,
                                     height: 25,
                                     child: CircularProgressIndicator())
                                 : const Text(
-                                    'Log In',
+                                    'Sign Up',
                                     style: TextStyle(color: Colors.black),
                                   ),
                           ),
@@ -99,13 +135,34 @@ class LoginScreen extends StatelessWidget {
     });
   }
 
-  bool isNumber(String string) {
-    final numericRegex = RegExp(r'^-?(([0-9]*)|(([0-9]*)\.([0-9]*)))$');
-
-    return numericRegex.hasMatch(string);
+  Widget _buildCustomDropdownButton(List<String> listOfValue, hint, function) {
+    return Padding(
+      padding: const EdgeInsetsDirectional.symmetric(
+        horizontal: 40.0,
+      ),
+      child: SizedBox(
+          width: 300.0,
+          child: DropdownButton<String>(
+            hint: Text(
+              hint,
+              style: const TextStyle(color: Colors.white, fontSize: 18),
+            ),
+            borderRadius: BorderRadius.circular(20),
+            style: const TextStyle(color: Colors.teal),
+            items: listOfValue.map<DropdownMenuItem<String>>((value) {
+              return DropdownMenuItem(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+            onChanged: (value) {
+              function(value!);
+            },
+          )),
+    );
   }
 
-  Widget _buildCustomTextFormField(label, icon, controller, obscure) {
+  Widget _buildCustomTextFormField(label, icon, controller) {
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(
         horizontal: 40.0,
@@ -117,8 +174,7 @@ class LoginScreen extends StatelessWidget {
           validator: (String? value) {
             if (value!.isEmpty) {
               return 'this field required';
-            } else if (label != 'password' &&
-                !RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
+            } else if (label == 'email' && isEmail(value)) {
               return 'please enter invalide email';
             } else if (label == 'password' && value.length < 8) {
               return 'password must be grater than 8 character';
@@ -138,9 +194,17 @@ class LoginScreen extends StatelessWidget {
             ),
             suffixIconColor: Colors.white,
           ),
-          obscureText: obscure,
+          obscureText: true,
         ),
       ),
     );
   }
+
+  bool isNumber(String string) {
+    final numericRegex = RegExp(r'^-?(([0-9]*)|(([0-9]*)\.([0-9]*)))$');
+
+    return numericRegex.hasMatch(string);
+  }
+
+  bool isEmail(String value) => !RegExp(r'\S+@\S+\.\S+').hasMatch(value);
 }

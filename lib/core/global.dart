@@ -1,3 +1,3 @@
-import 'models/user_model.dart';
+import '../models/user_model.dart';
 
 late UserData userData;

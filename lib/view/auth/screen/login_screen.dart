@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:online_coaching/features/auth/store/auth_cubit.dart';
-import 'package:online_coaching/features/auth/store/auth_state.dart';
+import 'package:online_coaching/view/auth/logic/auth_cubit.dart';
+import 'package:online_coaching/view/auth/logic/auth_state.dart';
 import 'package:online_coaching/view/welcome_screen.dart';
 
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +13,7 @@ class RegisterScreen extends StatelessWidget {
       if (state is AuthSuccess) {
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => const WelcomeScreen()));
-      }
-
-      if (state is AuthFail) {
+      } else if (state is AuthFail) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
               backgroundColor: Colors.red, content: Text(state.errorMessage)),
@@ -47,7 +45,7 @@ class RegisterScreen extends StatelessWidget {
                       const SizedBox(height: 80.0),
                       const Center(
                         child: Text(
-                          'Register Now',
+                          'Login Now',
                           style: TextStyle(
                             fontSize: 40.0,
                             fontWeight: FontWeight.bold,
@@ -58,47 +56,13 @@ class RegisterScreen extends StatelessWidget {
                       const SizedBox(
                         height: 56.0,
                       ),
-                      _buildCustomDropdownButton(['coach', 'user'],
-                          cubit.selectedUserType, cubit.onChangeUserType),
+                      _buildCustomTextFormField(
+                          'email', Icons.email, cubit.email, false),
                       const SizedBox(
                         height: 15.0,
                       ),
                       _buildCustomTextFormField(
-                          'user name', Icons.person_2, cubit.name),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      _buildCustomTextFormField(
-                          'height', Icons.height, cubit.height),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      _buildCustomTextFormField(
-                          'weight', Icons.line_weight, cubit.weight),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      _buildCustomTextFormField('age', Icons.person, cubit.age),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      _buildCustomDropdownButton(['male', 'famele'],
-                          cubit.gender, cubit.onChangeGender),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      _buildCustomTextFormField(
-                          'user level', Icons.numbers, cubit.level),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      _buildCustomTextFormField(
-                          'Email', Icons.email, cubit.password),
-                      const SizedBox(
-                        height: 15.0,
-                      ),
-                      _buildCustomTextFormField(
-                          'Password', Icons.lock, cubit.password),
+                          'password', Icons.lock, cubit.password, true),
                       const SizedBox(
                         height: 80.0,
                       ),
@@ -111,14 +75,14 @@ class RegisterScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20.0)),
                           width: 200.0,
                           child: MaterialButton(
-                            onPressed: cubit.registerUser,
+                            onPressed: cubit.loginUser,
                             child: state is AuthLoading
                                 ? const SizedBox(
                                     width: 25,
                                     height: 25,
                                     child: CircularProgressIndicator())
                                 : const Text(
-                                    'Sign Up',
+                                    'Log In',
                                     style: TextStyle(color: Colors.black),
                                   ),
                           ),
@@ -135,34 +99,13 @@ class RegisterScreen extends StatelessWidget {
     });
   }
 
-  Widget _buildCustomDropdownButton(List<String> listOfValue, hint, function) {
-    return Padding(
-      padding: const EdgeInsetsDirectional.symmetric(
-        horizontal: 40.0,
-      ),
-      child: SizedBox(
-          width: 300.0,
-          child: DropdownButton<String>(
-            hint: Text(
-              hint,
-              style: const TextStyle(color: Colors.white, fontSize: 18),
-            ),
-            borderRadius: BorderRadius.circular(20),
-            style: const TextStyle(color: Colors.teal),
-            items: listOfValue.map<DropdownMenuItem<String>>((value) {
-              return DropdownMenuItem(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
-            onChanged: (value) {
-              function(value!);
-            },
-          )),
-    );
+  bool isNumber(String string) {
+    final numericRegex = RegExp(r'^-?(([0-9]*)|(([0-9]*)\.([0-9]*)))$');
+
+    return numericRegex.hasMatch(string);
   }
 
-  Widget _buildCustomTextFormField(label, icon, controller) {
+  Widget _buildCustomTextFormField(label, icon, controller, obscure) {
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(
         horizontal: 40.0,
@@ -174,7 +117,8 @@ class RegisterScreen extends StatelessWidget {
           validator: (String? value) {
             if (value!.isEmpty) {
               return 'this field required';
-            } else if (label == 'email' && isEmail(value)) {
+            } else if (label != 'password' &&
+                !RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
               return 'please enter invalide email';
             } else if (label == 'password' && value.length < 8) {
               return 'password must be grater than 8 character';
@@ -194,17 +138,9 @@ class RegisterScreen extends StatelessWidget {
             ),
             suffixIconColor: Colors.white,
           ),
-          obscureText: true,
+          obscureText: obscure,
         ),
       ),
     );
   }
-
-  bool isNumber(String string) {
-    final numericRegex = RegExp(r'^-?(([0-9]*)|(([0-9]*)\.([0-9]*)))$');
-
-    return numericRegex.hasMatch(string);
-  }
-
-  bool isEmail(String value) => !RegExp(r'\S+@\S+\.\S+').hasMatch(value);
 }

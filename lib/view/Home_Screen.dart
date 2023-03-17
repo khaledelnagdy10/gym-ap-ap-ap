@@ -1,8 +1,8 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:online_coaching/features/auth/screens/register_screen.dart';
+import 'package:online_coaching/view/auth/screen/register_screen.dart';
 
-import '../features/auth/screens/login_screen.dart';
+import 'auth/screen/login_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_coaching/core/services/auth_services.dart';
-import 'package:online_coaching/features/auth/store/auth_state.dart';
+import 'package:online_coaching/view/auth/logic/auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   final AuthServices authServices;
