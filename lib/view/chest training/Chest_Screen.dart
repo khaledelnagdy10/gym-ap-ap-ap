@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:online_coaching/screens/gifs.dart';
+import 'package:online_coaching/view/chest%20training/chestbarflat.dart';
 
+import '../videos.dart';
 
-class Arm_Screen extends StatelessWidget {
-  const Arm_Screen({Key? key}) : super(key: key);
+class ChestScreen extends StatelessWidget {
+  const ChestScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class Arm_Screen extends StatelessWidget {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/17.png'),
+              image: AssetImage('assets/images/13.png'),
               fit: BoxFit.fill,
             ),
           ),
@@ -33,19 +34,20 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 150.0,),
+            const SizedBox(height: 120.0,),
             Padding(
               padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
-                onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const Gif()));
+                onPressed: ()
+                {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const ChestBarFlat()));
                 },
-                child: const Text('Biceps Curl',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25.0,
-                  ),
+                child: const Text('Chest Bar Flat',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25.0,
+                ),
                 ),
               ),
             ),
@@ -65,14 +67,24 @@ class Arm_Screen extends StatelessWidget {
               padding: const EdgeInsetsDirectional.symmetric(horizontal: 120.0),
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const Gif()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const VideoPlayerApp()));
                 },
-                child: const Text('Rope Biceps Curl',
+                child: const Text('Incline Chest Press',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 25.0,
+                    fontSize: 19.0,
                   ),
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 120.0),
+              child: Text(' Machine',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19.0,
                 ),
               ),
             ),
@@ -87,19 +99,30 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 70.0,),
+            const SizedBox(height: 60.0,),
             Padding(
               padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const Gif()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const VideoPlayerApp()));
+
                 },
-                child: const Text('Kick Back',
+                child: const Text('Chest Fly',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 25.0,
                   ),
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              child: Text('Machine',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25.0,
                 ),
               ),
             ),
@@ -114,19 +137,29 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 90.0,),
+            const SizedBox(height: 60.0,),
             Padding(
               padding: const EdgeInsetsDirectional.symmetric(horizontal: 125.0),
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const Gif()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const VideoPlayerApp()));
                 },
-                child: const Text('Over Head',
+                child: const Text('Incline db',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 25.0,
                   ),
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 125.0),
+              child: Text('Chest Press',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25.0,
                 ),
               ),
             ),
@@ -141,7 +174,6 @@ class Arm_Screen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 50.0,),
           ],
         ),
       ]),

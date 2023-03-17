@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_coaching/screens/rate_screen.dart';
+import 'package:online_coaching/view/rate_screen.dart';
 
 class CoachNumOne extends StatelessWidget {
   const CoachNumOne({Key? key}) : super(key: key);

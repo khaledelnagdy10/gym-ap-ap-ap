@@ -1,6 +1,6 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:online_coaching/screens/Home_Screen.dart';
+import 'package:online_coaching/view/Home_Screen.dart';
 
 
 class DeleteScreen extends StatefulWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_coaching/features/auth/store/auth_cubit.dart';
 import 'package:online_coaching/features/auth/store/auth_state.dart';
-import 'package:online_coaching/screens/welcome_screen.dart';
+import 'package:online_coaching/view/welcome_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});

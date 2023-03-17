@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:online_coaching/screens/Maps_screen.dart';
-import 'package:online_coaching/screens/Profile_Screen.dart';
-import 'package:online_coaching/screens/settings/setting_Screen.dart';
+import 'package:online_coaching/view/Maps_screen.dart';
+import 'package:online_coaching/view/Profile_Screen.dart';
+import 'package:online_coaching/view/settings/setting_Screen.dart';
 import 'coaches/Coaches_Screen.dart';
 import 'training screens/Training_Screen.dart';
 

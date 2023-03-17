@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:online_coaching/screens/training%20screens/Training_Screen.dart';
-import 'package:online_coaching/screens/arm%20training/arm_screen.dart';
-import 'package:online_coaching/screens/cardio%20training/cardio_screen.dart';
-import 'package:online_coaching/screens/leg%20training/leg_screen.dart';
+import 'package:online_coaching/view/training%20screens/Training_Screen.dart';
+import 'package:online_coaching/view/arm%20training/arm_screen.dart';
+import 'package:online_coaching/view/cardio%20training/cardio_screen.dart';
+import 'package:online_coaching/view/leg%20training/leg_screen.dart';
 
 class TrainingNumTwo extends StatelessWidget {
   const TrainingNumTwo({Key? key}) : super(key: key);

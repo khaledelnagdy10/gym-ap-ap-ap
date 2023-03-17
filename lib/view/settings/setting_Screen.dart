@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:online_coaching/screens/settings/Change_Password_Screen.dart';
-import 'package:online_coaching/screens/settings/Delete_Screen.dart';
-import 'package:online_coaching/screens/settings/Edit_Screen.dart';
+import 'package:online_coaching/view/settings/Change_Password_Screen.dart';
+import 'package:online_coaching/view/settings/Delete_Screen.dart';
+import 'package:online_coaching/view/settings/Edit_Screen.dart';
 
 class SettingsScreen extends StatefulWidget {
 

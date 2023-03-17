@@ -1,7 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:online_coaching/screens/Home_Screen.dart';
-import 'package:online_coaching/screens/Profile_Screen.dart';
+import 'package:online_coaching/view/Home_Screen.dart';
+import 'package:online_coaching/view/Profile_Screen.dart';
 
 
 class LogOutScreen extends StatefulWidget {

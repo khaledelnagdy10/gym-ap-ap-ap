@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_coaching/core/global.dart';
 import 'package:online_coaching/core/models/user_model.dart';
-import 'package:online_coaching/screens/settings/setting_Screen.dart';
+import 'package:online_coaching/view/settings/setting_Screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:online_coaching/screens/welcome_screen.dart';
+import 'package:online_coaching/view/welcome_screen.dart';
 
 
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:online_coaching/screens/coaches/Coaches_Screen.dart';
-import 'package:online_coaching/screens/Maps_screen.dart';
-import 'package:online_coaching/screens/Profile_Screen.dart';
-import 'package:online_coaching/screens/training%20screens/Training_Screen.dart';
+import 'package:online_coaching/view/coaches/Coaches_Screen.dart';
+import 'package:online_coaching/view/Maps_screen.dart';
+import 'package:online_coaching/view/Profile_Screen.dart';
+import 'package:online_coaching/view/training%20screens/Training_Screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);

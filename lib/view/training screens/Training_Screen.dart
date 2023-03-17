@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:online_coaching/screens/training%20screens/Training_Number_TwoScreen.dart';
-import 'package:online_coaching/screens/back%20training/back_Screen.dart';
-import 'package:online_coaching/screens/shoulder%20training/shoulder_screen.dart';
-import 'package:online_coaching/screens/sidebar_screen.dart';
-import 'package:online_coaching/screens/welcome_screen.dart';
+import 'package:online_coaching/view/training%20screens/Training_Number_TwoScreen.dart';
+import 'package:online_coaching/view/back%20training/back_Screen.dart';
+import 'package:online_coaching/view/shoulder%20training/shoulder_screen.dart';
+import 'package:online_coaching/view/sidebar_screen.dart';
+import 'package:online_coaching/view/welcome_screen.dart';
 
 import '../chest training/Chest_Screen.dart';
 
