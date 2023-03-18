@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_coaching/view/Profile_Screen.dart';
+import 'package:online_coaching/view/profile_screen.dart';
 
 class ChangePaswwordScreen extends StatefulWidget {
   const ChangePaswwordScreen({super.key});

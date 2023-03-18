@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_coaching/view/auth/logic/auth_cubit.dart';
 import 'package:online_coaching/view/auth/logic/auth_state.dart';
-import 'package:online_coaching/view/welcome_screen.dart';
+import 'package:online_coaching/view/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(listener: (context, state) {
       if (state is AuthSuccess) {
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => const WelcomeScreen()));
+            MaterialPageRoute(builder: (context) => HomeScreen()));
       } else if (state is AuthFail) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(

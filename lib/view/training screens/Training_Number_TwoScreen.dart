@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_coaching/view/training%20screens/Training_Screen.dart';
+import 'package:online_coaching/view/training%20screens/workout_screen.dart';
 import 'package:online_coaching/view/arm%20training/arm_screen.dart';
 import 'package:online_coaching/view/cardio%20training/cardio_screen.dart';
 import 'package:online_coaching/view/leg%20training/leg_screen.dart';

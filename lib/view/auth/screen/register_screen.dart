@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_coaching/view/auth/logic/auth_cubit.dart';
 import 'package:online_coaching/view/auth/logic/auth_state.dart';
-import 'package:online_coaching/view/welcome_screen.dart';
+import 'package:online_coaching/view/home_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -12,7 +12,7 @@ class RegisterScreen extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(listener: (context, state) {
       if (state is AuthSuccess) {
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => const WelcomeScreen()));
+            MaterialPageRoute(builder: (context) => HomeScreen()));
       }
 
       if (state is AuthFail) {
@@ -64,21 +64,22 @@ class RegisterScreen extends StatelessWidget {
                         height: 15.0,
                       ),
                       _buildCustomTextFormField(
-                          'user name', Icons.person_2, cubit.name),
+                          'user name', Icons.person_2, cubit.name, false),
                       const SizedBox(
                         height: 15.0,
                       ),
                       _buildCustomTextFormField(
-                          'height', Icons.height, cubit.height),
+                          'height', Icons.height, cubit.height, false),
                       const SizedBox(
                         height: 15.0,
                       ),
                       _buildCustomTextFormField(
-                          'weight', Icons.line_weight, cubit.weight),
+                          'weight', Icons.line_weight, cubit.weight, false),
                       const SizedBox(
                         height: 15.0,
                       ),
-                      _buildCustomTextFormField('age', Icons.person, cubit.age),
+                      _buildCustomTextFormField(
+                          'age', Icons.person, cubit.age, false),
                       const SizedBox(
                         height: 15.0,
                       ),
@@ -88,17 +89,21 @@ class RegisterScreen extends StatelessWidget {
                         height: 15.0,
                       ),
                       _buildCustomTextFormField(
-                          'user level', Icons.numbers, cubit.level),
+                          'user level', Icons.numbers, cubit.level, false),
                       const SizedBox(
                         height: 15.0,
                       ),
                       _buildCustomTextFormField(
-                          'Email', Icons.email, cubit.password),
+                        'Email',
+                        Icons.email,
+                        cubit.email,
+                        false,
+                      ),
                       const SizedBox(
                         height: 15.0,
                       ),
                       _buildCustomTextFormField(
-                          'Password', Icons.lock, cubit.password),
+                          'Password', Icons.lock, cubit.password, true),
                       const SizedBox(
                         height: 80.0,
                       ),
@@ -162,7 +167,7 @@ class RegisterScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCustomTextFormField(label, icon, controller) {
+  Widget _buildCustomTextFormField(label, icon, controller, obscure) {
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(
         horizontal: 40.0,
@@ -194,7 +199,7 @@ class RegisterScreen extends StatelessWidget {
             ),
             suffixIconColor: Colors.white,
           ),
-          obscureText: true,
+          obscureText: obscure,
         ),
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:online_coaching/core/global.dart';
 import 'package:online_coaching/models/user_model.dart';
 import 'package:online_coaching/view/settings/setting_Screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -15,24 +14,35 @@ class update_data extends StatefulWidget {
 // ignore: camel_case_types
 class _update_dataState extends State<update_data> {
   final _fireStore = FirebaseFirestore.instance;
-
+  UserData? userData;
   getUserData() async {
-    _fireStore.collection('users').doc(userData.id).get().then((data) {
+    _fireStore
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .get()
+        .then((data) {
       userData = UserData.fromMap(data.data() as Map<String, dynamic>);
     });
   }
 
-  final _levelUpdateController = TextEditingController(text: userData.level);
-  final _ageUpdateController =
-      TextEditingController(text: userData.age.toString());
-  final _ganderUpdateController = TextEditingController(text: userData.gender);
-  final _heightUpdateController =
-      TextEditingController(text: userData.height.toString());
-  final _weightUpdateController =
-      TextEditingController(text: userData.weight.toString());
+  @override
+  void initState() {
+    getUserData();
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+    final levelUpdateController = TextEditingController(text: userData!.level);
+    final ageUpdateController =
+        TextEditingController(text: userData!.age.toString());
+    final ganderUpdateController =
+        TextEditingController(text: userData!.gender);
+    final heightUpdateController =
+        TextEditingController(text: userData!.height.toString());
+    final weightUpdateController =
+        TextEditingController(text: userData!.weight.toString());
     return Scaffold(
       body: Stack(
         children: [
@@ -66,14 +76,14 @@ class _update_dataState extends State<update_data> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          userData.name,
+                          userData!.name,
                           style: const TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),
                         ),
                         Text(
-                          userData.email,
+                          userData!.email,
                           style: const TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
@@ -117,7 +127,7 @@ class _update_dataState extends State<update_data> {
                     horizontal: 40.0,
                   ),
                   child: TextField(
-                    controller: _levelUpdateController,
+                    controller: levelUpdateController,
                   )),
               const SizedBox(
                 height: 30.0,
@@ -127,41 +137,39 @@ class _update_dataState extends State<update_data> {
                     horizontal: 40.0,
                   ),
                   child: TextField(
-                    controller: _ganderUpdateController,
+                    controller: ganderUpdateController,
                   )),
               const SizedBox(
                 height: 30.0,
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.symmetric(
-                  horizontal: 40.0,
-                ),
-                child: TextField(
-                  controller: _weightUpdateController,
-                )
-              ),
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    horizontal: 40.0,
+                  ),
+                  child: TextField(
+                    controller: weightUpdateController,
+                  )),
               const SizedBox(
                 height: 30.0,
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.symmetric(
-                  horizontal: 40.0,
-                ),
-                child: TextField( decoration: InputDecoration(labelText: 'Height'),
-                  controller: _heightUpdateController,
-                )
-              ),
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    horizontal: 40.0,
+                  ),
+                  child: TextField(
+                    decoration: const InputDecoration(labelText: 'Height'),
+                    controller: heightUpdateController,
+                  )),
               const SizedBox(
                 height: 30.0,
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.symmetric(
-                  horizontal: 40.0,
-                ),
-                child: TextField(
-                  controller: _ageUpdateController,
-                )
-              ),
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    horizontal: 40.0,
+                  ),
+                  child: TextField(
+                    controller: ageUpdateController,
+                  )),
             ],
           ),
         ],
