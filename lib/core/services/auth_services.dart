@@ -10,25 +10,21 @@ class AuthServices {
   final _fireStore = FirebaseFirestore.instance;
   // User userDetails;
 
-  Future<void> update(String email, String password, String name, double weight,
-      double height, String gender, int age, String level, userType) async {
+  Future<void> update(String name, double weight, double height, String gender,
+      int age, String level) async {
     currentUser.user!.updateDisplayName(name);
 
     _fireStore
         .collection('users')
         .doc(FirebaseAuth.instance.currentUser!.uid)
-        .update(UserData(
-          id: currentUser.user!.uid,
-          name: name,
-          email: email,
-          weight: weight,
-          height: height,
-          gender: gender,
-          userType: userType,
-          age: age,
-          level: level,
-          imageUrl: '',
-        ).toMap());
+        .update({
+      "name": name,
+      "weight": weight,
+      "age": age,
+      "height": height,
+      "gender": gender,
+      "level": level
+    });
   }
 
   Future<void> register(

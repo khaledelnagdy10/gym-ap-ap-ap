@@ -4,8 +4,17 @@ import 'package:online_coaching/view/auth/logic/auth_cubit.dart';
 import 'package:online_coaching/view/auth/logic/auth_state.dart';
 import 'package:online_coaching/view/home_screen.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
+
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
+  String currentGander = 'male';
+
+  String currentUserType = 'user';
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +68,7 @@ class RegisterScreen extends StatelessWidget {
                         height: 56.0,
                       ),
                       _buildCustomDropdownButton(['coach', 'user'],
-                          cubit.selectedUserType, cubit.onChangeUserType),
+                          currentUserType, cubit.onChangeUserType),
                       const SizedBox(
                         height: 15.0,
                       ),
@@ -84,7 +93,7 @@ class RegisterScreen extends StatelessWidget {
                         height: 15.0,
                       ),
                       _buildCustomDropdownButton(['male', 'famele'],
-                          cubit.gender, cubit.onChangeGender),
+                          currentGander, cubit.onChangeGender),
                       const SizedBox(
                         height: 15.0,
                       ),
@@ -156,12 +165,30 @@ class RegisterScreen extends StatelessWidget {
             style: const TextStyle(color: Colors.teal),
             items: listOfValue.map<DropdownMenuItem<String>>((value) {
               return DropdownMenuItem(
-                value: value,
+                value: listOfValue.contains('male')
+                    ? value
+                    : value == 'user'
+                        ? 'user'
+                        : 'coach',
                 child: Text(value),
               );
             }).toList(),
             onChanged: (value) {
-              function(value!);
+              function(listOfValue.contains('male')
+                  ? value
+                  : value == 'user'
+                      ? 'coach'
+                      : 'user');
+
+              if (listOfValue.contains('male')) {
+                setState(() {
+                  currentGander = value!;
+                });
+              } else {
+                setState(() {
+                  currentUserType = value != 'user' ? 'coach' : 'user';
+                });
+              }
             },
           )),
     );
